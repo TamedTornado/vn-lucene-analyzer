@@ -36,12 +36,13 @@ import com.bk.vnanalyzer.ViStopWordsProvider;
  */
 public class AnalyzerTest {
     IndexReader indexReader;
+    
     @Before
     public void createDocument() throws IOException {
         Directory d = new RAMDirectory();
-        VNAnalyzer viAnalyzer = new VNAnalyzer(Version.LUCENE_43,ViStopWordsProvider.getStopWords("resources/stopwords.txt"));
+        VNAnalyzer viAnalyzer = new VNAnalyzer(Version.LUCENE_48,ViStopWordsProvider.getStopWords("resources/stopwords.txt"));
 
-        IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_43,viAnalyzer);
+        IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_48,viAnalyzer);
         IndexWriter indexWriter = new IndexWriter(d, config);
 
 
