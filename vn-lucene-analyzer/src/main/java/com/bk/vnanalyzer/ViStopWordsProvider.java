@@ -28,7 +28,7 @@ public class ViStopWordsProvider
 			
 			InputStream stream = cl.getResourceAsStream(resource);
 			
-			List<String> lines = IOUtils.readLines(stream, Charset.forName("UTF-8"));
+			List<String> lines = IOUtils.readLines(stream, "UTF-8");
 			
 			for (String line : lines)
 			{
