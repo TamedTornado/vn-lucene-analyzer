@@ -4,11 +4,13 @@ import java.io.Reader;
 
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.Tokenizer;
+import org.apache.lucene.analysis.charfilter.HTMLStripCharFilter;
 import org.apache.lucene.analysis.core.LowerCaseFilter;
 import org.apache.lucene.analysis.core.StopFilter;
 import org.apache.lucene.analysis.standard.StandardFilter;
 import org.apache.lucene.analysis.util.CharArraySet;
 import org.apache.lucene.analysis.util.StopwordAnalyzerBase;
+import org.apache.lucene.util.CharsRef;
 import org.apache.lucene.util.Version;
 
 /**
@@ -28,6 +30,11 @@ public class VNAnalyzer extends StopwordAnalyzerBase {
         super(version, stopwords);
     }
 
+    @Override
+    protected Reader initReader(String fieldName, Reader reader)
+    {
+    	return new HTMLStripCharFilter(reader);
+    }
 
     @Override
     protected TokenStreamComponents createComponents(final String fieldName, final Reader reader) {
