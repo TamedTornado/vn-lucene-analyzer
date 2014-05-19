@@ -11,7 +11,7 @@
 		<dependency>
 			<groupId>vn.hus</groupId>
 			<artifactId>nlp-tokenizer</artifactId>
-			<version>4.1.1-SNAPSHOT</version>
+			<version>4.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
