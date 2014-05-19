@@ -46,9 +46,9 @@ public class TestApp {
 
     public static void main(String[] args) throws IOException {
         Directory d = new RAMDirectory();
-        Analyzer viAnalyzer = new VNAnalyzer(Version.LUCENE_43, ViStopWordsProvider.getStopWords("resources/stopwords.txt"));
+        Analyzer viAnalyzer = new VNAnalyzer(Version.LUCENE_48, ViStopWordsProvider.getStopWordsFromClasspath("resources/stopwords.txt"));
 
-        IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_43,viAnalyzer);
+        IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_48,viAnalyzer);
         IndexWriter indexWriter = new IndexWriter(d, config);
 
         Document doc1 = new Document();
