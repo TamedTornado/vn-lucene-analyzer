@@ -3,8 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.tamedtornado</groupId>
 	<artifactId>vn-lucene-analyzer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-
+	<version>1.0.0</version>
 
 	<dependencies>
 
